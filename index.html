@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript">
-        function message() {
-            alert("Essa caixa de alerta é chamada com o evento onload");
-        }
-    </script>
+  <meta charset="UTF-8">
+  <title>Desafio da Lâmpada</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+    }
+    img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body onload="message()">
+<body>
 
-    
+  <h1>Desafio da Lâmpada</h1>
+  <img id="lamp" src="./img/desligada.jpg" alt="Lâmpada desligada">
+  <br>
+  <button onclick="toggleLamp()">Ligar / Desligar</button>
 
-    <script type="text/javascript">
-        document.write('<h1>Olá, Mundo!</h1>')
+  <script>
+    let isOn = false;
 
-        //var numero = 100;
-        //alert(numero);
+    function toggleLamp() {
+      const lamp = document.getElementById('lamp');
+      if (isOn) {
+        lamp.src = './img/desligada.jpg';
+      } else {
+        lamp.src = './img/ligada.jpg';
+      }
+      isOn = !isOn;
+    }
+  </script>
 
-    </script>
 </body>
 </html>
